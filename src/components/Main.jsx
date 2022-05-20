@@ -27,6 +27,9 @@ function Main() {
       justifyContent: "space-between",
       margin: "20px",
     },
+    img: {
+      borderRadius: "50%",
+    },
   };
   console.log(data);
 
@@ -46,10 +49,10 @@ function Main() {
         <div style={style.outer}>Lastname: {data?.results[0].name.last}</div>
         <button>Logout</button>
       </div>
-      <div>{data?.results[0].cell}</div>
-      <img src={data?.results[0].picture.large} alt="aas" />
+      <div>Phone : {data?.results[0].cell}</div>
+      <img src={data?.results[0].picture.large} alt="aas" style={style.img} />
       <div>
-        Date of birth:{" "}
+        Age:{" "}
         {moment(now).format("YYYY") -
           moment(data?.results[0].dob.date).format("YYYY")}
       </div>
